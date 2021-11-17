@@ -1,0 +1,14 @@
+img{
+    width: 200px;
+}
+li{
+    list-style: none;
+}
+
+#formContent{
+    display:flex;
+}
+
+form{
+    display:flex;
+}
