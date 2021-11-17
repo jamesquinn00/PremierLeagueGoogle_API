@@ -1,5 +1,10 @@
+body{
+    font-family: 'Lato', sans-serif;
+}
+
 img{
-    width: 200px;
+    width: 400px;
+    margin: 1% 37% 1% 37%;
 }
 li{
     list-style: none;
@@ -7,8 +12,29 @@ li{
 
 #formContent{
     display:flex;
+    justify-content: center;
 }
 
 form{
     display:flex;
+}
+#results ul{
+    text-align: center;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    background-color:rgb(245, 241, 241);
+    margin-left:10rem;
+    margin-right:10rem;
+    
+}
+#results li{
+    margin-top: 1rem;
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+    margin-right: 4rem;
+}
+
+#results ul li:first-child{
+    font-weight:bold;
+    
 }

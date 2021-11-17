@@ -5,9 +5,6 @@ const lucky = document.getElementById('lucky');
 const resultsArea = document.querySelector('#results');
 // const randLink = document.getElementById('randLink');
 
-// lucky.setAttribute("onclick", "location.href='http://religiasatanista.ro'");
-
-
 function pageLoad(){
     resultsArea.textContent = "";
     const url = "http://localhost:4000/results"
@@ -53,7 +50,7 @@ function getMatchByFootballTeamName(query, teamList){
         console.log(teamList[x])
         let currentChoice= teamList[x] 
         for(let content in teamList[x]){
-         if(currentChoice[content].includes(query)){
+         if(currentChoice[content].toLowerCase().includes(query.toLowerCase())){
             console.log("MATCH")
             displayTeam(teamList[x])
             break
@@ -66,10 +63,24 @@ function getMatchByFootballTeamName(query, teamList){
 function displayTeam(option){
     const list = document.createElement('ul');
     for(const x in option){
-        const newLi = document.createElement("li");
-        console.log(x + ": " + option[x])
-        newLi.textContent = x + ": " + option[x];
-        resultsArea.appendChild(newLi);
-    }
+        console.log(x)
+        if(x==="link"){
+            console.log("Here")
+            const newLi = document.createElement('a')
+            const url = option[x]
+            newLi.setAttribute("href",url)
+            list.appendChild(newLi)
+            newLi.textContent = option[x];
+            list.appendChild(newLi);
+            resultsArea.appendChild(list)
+        }
+        else{
+            const newLi = document.createElement("li");
+        newLi.textContent = option[x];
+        list.appendChild(newLi);
+        resultsArea.appendChild(list)
+        }
+        
 }
 
+}
