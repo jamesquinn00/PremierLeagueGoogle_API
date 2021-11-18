@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "jest --watchAll",
-    "coverage":"jest --coverage"
+    "coverage": "jest --coverage",
+    "start": "nodemon app.js"
   },
   "keywords": [],
   "author": "",

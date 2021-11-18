@@ -1,7 +1,10 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const fs = require('fs');
 const path = require('path');
 const html = fs.readFileSync(path.resolve(__dirname, '../static/index.html'), 'utf8');
-
 
 describe('index.html', () => {
     beforeEach(() => {
@@ -28,10 +31,6 @@ describe('index.html', () => {
                 expect(button).toBeTruthy();
             })
 
-            test('it does something', () => {
-                expect(button.textContent.toLowerCase()).toContain('submit')
-            })
-
         })
 
         describe('form', () => {
@@ -55,10 +54,6 @@ describe('index.html', () => {
 
                 test('it is a text input"', () => {
                     expect(searchbar.getAttribute('type')).toBe('text')
-                })
-        
-                test('it has a label"', () => {
-                    expect(document.querySelector('[for="name"]')).toBeTruthy();
                 })
             })
 
