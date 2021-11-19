@@ -43,7 +43,6 @@ form.addEventListener("submit", e=>{
     }
 })
 
-
 function getMatchByFootballTeamName(query, teamList){
     failcount = 0
     for(let x in teamList){
@@ -59,7 +58,7 @@ function getMatchByFootballTeamName(query, teamList){
         }
     }
     // if statement to display 'no results' when no matches are found
-    if (failcount == 3*teamList.length){
+    if (failcount == 4*teamList.length){
         const noResults = document.createElement('p')
         noResults.textContent = `No results found for '${query}''`
         noResults.setAttribute("id", "no-results")
@@ -78,8 +77,7 @@ function displayTeam(option){
             newLi.textContent = option[x];
             list.appendChild(newLi);
             resultsArea.appendChild(list)
-        }
-        else {
+        } else if(x!=="keywords"){
             newLi = document.createElement("li")
             newLi.textContent = option[x];
             list.appendChild(newLi);
